@@ -1,65 +1,73 @@
-import Image from "next/image";
+import Image from "next/image"
+import { FeedbackForm } from "@/components/FeedbackForm"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="min-h-screen bg-background py-16 md:py-24 px-4 selection:bg-brand-orange selection:text-white relative overflow-hidden font-sans">
+      {/* Top Decorations */}
+      <div className="absolute top-0 left-0 w-32 md:w-64 pointer-events-none mix-blend-multiply opacity-60">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/esquerda_topo.png"
+          alt="Decoration Left"
+          width={256}
+          height={256}
+          className="w-full h-auto"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </div>
+      <div className="absolute top-0 right-0 w-32 md:w-64 pointer-events-none mix-blend-multiply opacity-60">
+        <Image
+          src="/diretira_topo.png"
+          alt="Decoration Right"
+          width={256}
+          height={256}
+          className="w-full h-auto"
+          priority
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col min-h-[85vh]">
+        <header className="mb-12 md:mb-16 text-center space-y-6">
+          <div className="flex justify-center mb-8 relative">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/logo-listening.png"
+              alt="Listening Research"
+              width={400}
+              height={200}
+              className="h-32 md:h-48 w-auto object-contain"
+              priority
+              unoptimized
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black text-[#1a1a1a] tracking-tighter leading-tight drop-shadow-sm">
+            Caixinha do <span className="text-brand-orange">Desabafo</span>
+          </h1>
+          <p className="text-lg md:text-xl text-[#333333] max-w-2xl mx-auto leading-relaxed font-medium opacity-90">
+            Um espaço protegido para você compartilhar ideias, elogios ou preocupações.
+            <br className="hidden md:block" /> Sua identidade é 100% preservada.
+          </p>
+        </header>
+
+        {/* Form taking main focus */}
+        <div className="flex-1 w-full">
+          <FeedbackForm />
         </div>
-      </main>
-    </div>
-  );
+
+        <footer className="mt-24 text-center space-y-8 pb-8">
+          <div className="flex justify-center w-full px-4">
+            <Image
+              src="/regua.png"
+              alt="Parceiros"
+              width={900}
+              height={120}
+              className="w-full max-w-3xl h-auto opacity-95 mix-blend-multiply"
+            />
+          </div>
+          <div className="text-sm text-[#4a4a4a] font-semibold tracking-wide">
+            &copy; 2025 Listening Research. Todos os direitos reservados.
+          </div>
+        </footer>
+      </div>
+    </main>
+  )
 }

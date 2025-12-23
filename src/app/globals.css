@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-roboto-mono);
+  --font-mono: var(--font-roboto-mono);
+
+  --color-brand-orange: #d55b1f;
+  --color-brand-yellow: #d4d432;
+  --color-brand-lime: #c4cf4a;
+  --color-brand-bg: #f5f5f5;
+
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
+
+/* Custom utilities for animation delay */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+:root {
+  --background: #d4d432;
+  --foreground: #171717;
+
+  /* Fallback tokens for consistency if variables are used directly */
+  --brand-orange: #d55b1f;
+  --brand-yellow: #d4d432;
+  --brand-lime: #c4cf4a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #d4d432;
+    /* Enforcing light/neutral theme as per reference for now, or maybe dark if requested? Reference was forcing light bg in dark mode */
+    --foreground: #171717;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), monospace;
 }
