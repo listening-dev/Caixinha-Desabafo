@@ -49,25 +49,26 @@ export default function Home() {
         </header>
 
         {/* Form taking main focus */}
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full mb-12">
           <FeedbackForm />
         </div>
-
-        <footer className="mt-24 text-center space-y-8 pb-8">
-          <div className="flex justify-center w-full px-4">
-            <Image
-              src="/regua.png"
-              alt="Parceiros"
-              width={900}
-              height={120}
-              className="w-full max-w-3xl h-auto opacity-95 mix-blend-multiply"
-            />
-          </div>
-          <div className="text-sm text-[#4a4a4a] font-semibold tracking-wide">
-            &copy; 2025 Listening Research. Todos os direitos reservados.
-          </div>
-        </footer>
       </div>
+
+      <footer className="w-full mt-auto relative z-10">
+        <div className="w-full">
+          <Image
+            src="/regua.png"
+            alt="Parceiros"
+            width={1920}
+            height={200}
+            className="w-full h-auto object-cover opacity-95 mix-blend-multiply"
+            priority
+          />
+        </div>
+        <div className="text-center py-6 text-sm text-[#4a4a4a] font-semibold tracking-wide bg-background/50 backdrop-blur-sm relative -mt-4">
+          &copy; 2025 Listening Research. Todos os direitos reservados.
+        </div>
+      </footer>
     </main>
   )
 }
