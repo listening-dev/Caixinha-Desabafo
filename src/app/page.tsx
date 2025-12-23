@@ -55,15 +55,17 @@ export default function Home() {
       </div>
 
       <footer className="w-full mt-auto relative z-10">
-        <div className="w-full">
-          <Image
-            src="/regua.png"
-            alt="Parceiros"
-            width={1920}
-            height={200}
-            className="w-full h-auto object-cover opacity-95 mix-blend-multiply"
-            priority
-          />
+        <div className="w-full flex justify-center bg-transparent">
+          <div className="w-full max-w-[1400px]">
+            <Image
+              src="/regua.png"
+              alt="Parceiros"
+              width={1920}
+              height={200}
+              className="w-full h-auto object-contain opacity-95 mix-blend-multiply"
+              priority
+            />
+          </div>
         </div>
         <div className="text-center py-6 text-sm text-[#4a4a4a] font-semibold tracking-wide bg-background/50 backdrop-blur-sm relative -mt-4">
           &copy; 2025 Listening Research. Todos os direitos reservados.

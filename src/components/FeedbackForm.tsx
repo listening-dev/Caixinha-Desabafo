@@ -58,7 +58,7 @@ export function FeedbackForm() {
     }
 
     return (
-        <form action={action} className="max-w-xl mx-auto space-y-8 bg-[#fdfdfd] p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100/50">
+        <form action={action} className="max-w-2xl mx-auto space-y-8 bg-[#fdfdfd] p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100/50">
 
             {/* Header Info - Removed as requested */}
 
